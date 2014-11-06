@@ -13,7 +13,6 @@ window.onload = function(){
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 		
 		
-		
 		numberOfGuesses += 1;
 		if (isNaN(number)) {
 			return [false, "Du gissade inte på ett tal. Gissa på ett tal mellan 1 och 100 "];
@@ -60,9 +59,9 @@ window.onload = function(){
 	submit.addEventListener("click", function(e){
 		e.preventDefault(); // Hindra formuläret från att skickas till servern. Vi hanterar allt på klienten.
 
-		var answer = guess(input.value) // Läser in talet från textrutan och skickar till funktionen "guess"
+		var answer = guess(input.value); // Läser in talet från textrutan och skickar till funktionen "guess"
+		input.value = ''; // la jag till för att tömma fönstret efter verje gissning för jag tyckte det var jobbigt att sudda.
 		p.innerHTML = answer[1];		// Skriver ut texten från arrayen som skapats i funktionen.	
-
 		if(answer[0] === true){				// Om spelet är slut, avaktivera knappen.
 			submit.disabled = true;
 		}

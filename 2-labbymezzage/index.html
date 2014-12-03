@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Labby Mezzage</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <header>
-        <img src="mezzy.jpg" alt="logga">
+</head>
+<header>
+    <img src="mezzy.jpg" alt="logga">
 
 
-    </header>
-    <body>
-       
-        <div id="container">
-			
-			<div id="mainbox">
-			
-				<div id="inputMessage">
-                </div>	
-				<form id="messageform" action="#">
-					<p><textarea id="messageText" rows="10" cols="50"></textarea></p>
-					<p><input type="submit" name="button" id="button" value="send"></p>
-				</form>
-			</div>
-		</div>
-        
-        
-        
-        
-        
-        
-     <script src="MessageBoard.js" type="text/javascript"></script>
+</header>
+
+<body>
+
+    <div id="container">
+
+        <div id="mainbox">
+
+            <div id="inputMessage">
+
+   
+              <!--<dynamisk div-tagg (div)>-->
+                   <!--<dynamisk p-tagg (text)>-->
+      
+            </div>
+            <form id="messageform" action="#">
+                <p id="count">Antal meddelanden: 0</p>
+            
+                <textarea id="messageText" rows="10" cols="50"></textarea>
+               
+                <input type="submit" name="button" id="button" value="send">
+               
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="MessageBoard.js" type="text/javascript"></script>
     <script src="Message.js" type="text/javascript"></script>
-    </body>
+</body>
 
 </html>

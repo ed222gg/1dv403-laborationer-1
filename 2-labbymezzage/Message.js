@@ -9,7 +9,7 @@ function Message(message, date){
     
     
     this.setText = function(_text){
-        message = _text;    
+        message = _text; // ska det vara understreck eller inte där. vad är _text, text och message? hur hänger dom ihop vad är vad och vad gör vad?
     };
     
     this.getDate = function(){
@@ -30,7 +30,11 @@ function Message(message, date){
     };
     
      Message.prototype.getDateText = function(){
-        
+            //return dateText
+            var timeStamp = this.getDate(),
+            dateText = timeStamp.getHours() + ":" + timeStamp.getMinutes() + ":" + timeStamp.getSeconds() + "  ";
+            return dateText    
+            //http://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
     };
 
 }

@@ -1,109 +1,79 @@
-body 
-{
-font-family: 'Gloria Hallelujah', cursive;
-background-color: #bfb1b1;
+header {
+    background-color: #C1F0F6;
+    width: 100%;
+    height: 150px;
 }
-
-#comments
-{
-font-family: 'Arial', cursive;
-font-weight: bold;
+body {
+    background-color: #FFFFFF;
 }
-
-
-#button
-{
-margin-right: 650px;
+ul {
+    list-style-type: none;
 }
-
-#messagebox
-{
-margin-left: 350px;    
+img {
+    padding-left: 400px;
 }
-
-#message
-{
-border-radius: 3px;  
+p {} #container {
+    margin-top: 10px;
+    text-align: justify;
+    background-color: #ffffff;
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 3px 14px 55px 7px #C1F0F6;
 }
+/*användarens meddelanden*/
 
-header
-{
-margin-left: 300px;
-height: 92px;
-width: 692px;
-background-image: url(LabbyMezzage.jpg);
-background-repeat: no-repeat;
-margin-bottom: 30px;
+#inputMessage {
+    margin-left: 236px;
+    min-height: 200px;
+    width: 452px;
 }
-
-main
-{
-    width: auto;
-    height: auto;
+#messageText {} #count {
+    float: right;
 }
-
-main p
-{
-    margin-left: 40px;
+#messageText {
+    line-height: 13px;
+    margin-left: 286px;
 }
-
-#container
-{
-height: 460px;
+#button {
+    width: 192px;
+    padding-left: 0px;
+    margin-left: 377px;
 }
-
-.message
-{
-max-width: 52.5%;
-margin: auto auto 10px;
-background-color: white;
-padding: 10px;
-border-radius: 10px;
-border: 1px solid black;
-overflow: hidden;
+#messageText:hover,
+#messagebox:active,
+#messagebox:focus {
+    background-color: #F0FFFF;
 }
-
-.buttons
-{
-float:right;
-width:110px;
+.imgClock {
+    cursor: pointer;
+    background-image: url(pics/clock28.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
 }
-
-.buttons p
-{
-font-family:Calibri, 'Verdana', 'Arial', 'Times';
-margin-left: 52px;
+.imgRemove {
+    cursor: pointer;
+    background-image: url(pics/erase.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
 }
-
-.value
-{
-float:left;
-font-family:Calibri, 'Verdana', 'Arial', 'Times';
-font-size:15px;
-max-width:500px;
-word-wrap:break-word;
+.date {} .textClass {
+    min-height: 25px;
+    background-color: #E4E4E4;
 }
-
-
-.time
-{
-float:right;
-font-family:Calibri, 'Verdana', 'Arial', 'Times';
-font-size:12px;
-width:50px;
+.divClass {
+    background-color: #E4E4E4;
 }
-
-
-.pictures 
-{
-float:right;
-}
-
-
-.pictures :hover
-{
--webkit-transform: scale(1.1);
--moz-transform: scale(1.1);
--o-transform: scale(1.1);
-transform: scale(1.1);
+.dateClass {
+    background-color: #C7C7C7;
+    font-size: 12px;
 }

@@ -23,6 +23,7 @@ img{
 }
 
 .colClass{
+     /*cursor: pointer;*/
    border-style: solid;
     width: 100px;
     height: 100px;

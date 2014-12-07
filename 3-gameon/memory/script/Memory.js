@@ -4,13 +4,19 @@ var Memory = {
                 // 2,2,4,1,0,3,1,3,4
     memoryArray: [],
     imgTagArray: [],
-    count: 0,
+    count: 0, // antal klick
+    score: 0,
+    firstClick: null,
+    firstClickLocation: null,
+    gridCol: 4,
+    gridRow: 4,
+    
     init: function() {
         var board = document.getElementById("grid");
 
-        Memory.memoryArray.push(RandomGenerator.getPictureArray(4, 4));
+        Memory.memoryArray.push(RandomGenerator.getPictureArray(Memory.gridCol, Memory.gridRow));
         console.log(Memory.memoryArray);
-        Memory.memoryBoard(4, 4, Memory.memoryArray);
+        Memory.memoryBoard(Memory.gridCol, Memory.gridRow, Memory.memoryArray);
         // Memory.click(Memory.MemoryArray); 
         
         
@@ -41,14 +47,50 @@ var Memory = {
     click: function(picId, locationId /*img*/){ // skickar med colclasslist till click funktion
        
        
-        Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png"); // sätter nya bilder med bildnumret från picId på rätt plats i imgTagArrayen
+       /*Om första inte har något värde sätter vi värden på både firstclick och secondclick. 
+       om secondclick inte är null så betyder det att första klicket har tryckts och därför har secondclick också den fått ett värde?
+       så nu måste det ju vara inne på andra klicket.. kolla om första och andra klicket är lika dana
+       */
+        var score = document.getElementById("score");
+    
+       
+        if (Memory.firstClick === null) 
+        {
+            Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png");
+            Memory.firstClick  = picId; 
+            Memory.firstClickLocation = locationId;
+            console.log("första fungerar");
+        }
+        else if(Memory.firstClick != null){
+           console.log("andra fungerar");
+           Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png");
+           
+            if (Memory.firstClick === picId){
+                Memory.score++;
+                score.innerHTML = "Poäng: " + Memory.score;
+                
+                if(Memory.score === (Memory.gridCol + Memory.gridRow))
+                {
+                   score.innerHTML += "<br>Grattis du vann!";
+                   
+                }
+            }
+            else 
+            {   
+               
+                //vänd tillbaka efter 1 sek, kalla på setTimeout?
+                setTimeout(function(){
+                    Memory.imgTagArray[locationId].setAttribute("src", "pics/0.png");
+                    Memory.imgTagArray[Memory.firstClickLocation].setAttribute("src", "pics/0.png");
+                }, 1000);
+            }
+             Memory.firstClick = null;
+        }
+   
+        //Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png"); // sätter nya bilder med bildnumret från picId på rätt plats i imgTagArrayen
+       
         //img.setAttribute("src", "pics/"+picId+".png")
-       
-         setTimeout(function(){
-        Memory.imgTagArray[locationId].setAttribute("src", "pics/0.png");
-         
-         }, 1000);
-       
+
     },
    //  timer: function(locationId){
         //  Memory.imgTagArray[locationId].setAttribute("src", "pics/0.png");

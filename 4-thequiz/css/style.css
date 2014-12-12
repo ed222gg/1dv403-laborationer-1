@@ -1,0 +1,58 @@
+header {
+
+}
+body {
+    background-color: #FFFFFF;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    padding-left: 400px;
+}
+p {} #container {
+    margin-top: 10px;
+    text-align: justify;
+    background-color: #ffffff;
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 3px 14px 55px 7px #C1F0F6;
+}
+/*användarens meddelanden*/
+
+#question {
+    
+    margin-left: 236px;
+    min-height: 200px;
+    width: 452px;
+}
+#messageText {} #countTries {
+    float: right;
+}
+#messageText {
+    line-height: 13px;
+    margin-left: 286px;
+}
+#button {
+    width: 111px;
+    padding-left: 0px;
+    margin-left: 377px;
+}
+
+.imgNext{  
+    float:right;
+    background-image: url(../pics/next.png);
+    width: 111px;
+    padding-left: 0px;
+    margin-left: 377px;
+}
+
+
+#messageText:hover,
+#messagebox:active,
+#messagebox:focus {
+    background-color: #F0FFFF;
+}
+

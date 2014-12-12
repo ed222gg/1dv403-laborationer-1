@@ -51,7 +51,7 @@ var MessageBoard = {
          
     renderMessage: function(messageID) {
       
-        MessageBoard. numberOfMessages();
+        MessageBoard.numberOfMessages();
         var date = document.createElement("p");
         var text = document.createElement("p"); //skapar en p tagg som vi sparar i variebeln text
         var div2 = document.createElement("div"); // skpar en div-tagg i var div

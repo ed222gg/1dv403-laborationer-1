@@ -4,9 +4,10 @@ var Memory = {
                 // 2,2,4,1,0,3,1,3,4
     memoryArray: [],
     imgTagArray: [],
-    count: 0, // antal klick
+    count: 1, // antal klick
     score: 0,
     firstClick: null,
+    secondClick: null,
     firstClickLocation: null,
     gridCol: 4,
     gridRow: 4,
@@ -24,7 +25,7 @@ var Memory = {
        
        // board.addEventListener("click", function(){ Memory.click(colClassList); }); // skapar klickevent till board
         
-        // Lopar längden av alla element i colClassen, kallar på eventclick, vi kallar på eventklick 
+        // Lopar längden av alla element i colClassen, kallar på eventclick
         //för att jag inte få ha en funktion inuti en loop för då blir i alltid fel nummer.
         for (var i = 0; i < colClassList.length; i++) {
             eventClick(i);
@@ -32,71 +33,70 @@ var Memory = {
         // funktion som vi kallar på i forlopen ovan, den lägger en eventlistener på alla element i colClassList
         function eventClick(locationId){
              colClassList[locationId].addEventListener("click", function() {
-                Memory.count ++;
+                 
+                 
+                //Memory.count ++;
                 console.log(Memory.count);
-                        var counter = document.getElementById("counter");
-                        counter.innerHTML = "Antal klick: " + Memory.count;
-
+                var counter = document.getElementById("counter");
+               
+                
                 Memory.click(Memory.memoryArray[0][locationId], locationId);// Kallar på memory.click och skickar med bildnummret från arrayen memoryArray samt locationId som är ett ökande nummer
               //Memory.click(Memory.memoryArray[0][locationId],  Memory.imgTagArray[locationId]);
             });
         }
-        
     },
-    
     click: function(picId, locationId /*img*/){ // skickar med colclasslist till click funktion
-       
-       
-       /*Om första inte har något värde sätter vi värden på både firstclick och secondclick. 
-       om secondclick inte är null så betyder det att första klicket har tryckts och därför har secondclick också den fått ett värde?
-       så nu måste det ju vara inne på andra klicket.. kolla om första och andra klicket är lika dana
-       */
+        
         var score = document.getElementById("score");
-    
+        var img0 = (Memory.imgTagArray[locationId].getAttribute("src")); // /pics/0-png
+        if(img0 != "pics/0.png"){
+           return;
+       }
+       
        
         if (Memory.firstClick === null) 
         {
             Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png");
             Memory.firstClick  = picId; 
             Memory.firstClickLocation = locationId;
+            Memory.count ++;
             console.log("första fungerar");
+            this.removeEventListener
+               if (Memory.count%2 === 0){
+                    counter.innerHTML = "Försök: " + (Memory.count/2);
+                }
         }
-        else if(Memory.firstClick != null){
-           console.log("andra fungerar");
-           Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png");
-           
+        else if(Memory.secondClick === null){
+            Memory.secondClick=picId;
+            console.log("andra fungerar");
+            Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png");
+           Memory.count ++;
+         
             if (Memory.firstClick === picId){
                 Memory.score++;
+                console.log(Memory.score);
+                
                 score.innerHTML = "Poäng: " + Memory.score;
                 
                 if(Memory.score === (Memory.gridCol + Memory.gridRow))
                 {
                    score.innerHTML += "<br>Grattis du vann!";
-                   
+                   Memory.count = 0;
                 }
+                Memory.firstClick = null;
+                Memory.secondClick = null;
             }
             else 
-            {   
-               
-                //vänd tillbaka efter 1 sek, kalla på setTimeout?
+            {   //vänd tillbaka efter 1 sek, 
                 setTimeout(function(){
+                    Memory.firstClick = null;
+                    Memory.secondClick = null;
                     Memory.imgTagArray[locationId].setAttribute("src", "pics/0.png");
                     Memory.imgTagArray[Memory.firstClickLocation].setAttribute("src", "pics/0.png");
-                }, 1000);
-            }
-             Memory.firstClick = null;
+                }, 500);
+            } 
         }
-   
-        //Memory.imgTagArray[locationId].setAttribute("src", "pics/"+picId+".png"); // sätter nya bilder med bildnumret från picId på rätt plats i imgTagArrayen
-       
-        //img.setAttribute("src", "pics/"+picId+".png")
-
     },
-   //  timer: function(locationId){
-        //  Memory.imgTagArray[locationId].setAttribute("src", "pics/0.png");
-         
-   //  },
-   
 
     memoryBoard: function(rows, cols, memoryArray){
         var grid = document.getElementById("grid");
@@ -133,18 +133,8 @@ var Memory = {
             }
             row.setAttribute("class", "rowClass");
             grid.appendChild(row);
-           
         }
-        //var counter = document.getElementById("counter");
-      //  counter.innerHTML = "Antal klick: " + Memory.count;
-        
     },
-    
-    
-    
 };
-
-
-
 //När sidan har laddads in så anropas init.
 window.onload = Memory.init;

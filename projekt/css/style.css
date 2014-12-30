@@ -1,0 +1,121 @@
+html,
+body {
+    width: 100%;
+    ght: 100%;
+    margin: 0;
+    padding: 0;
+}
+#template {}
+
+#desktop {
+    background-image: url("../pics/background.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    ght: 100%;
+}
+.window {
+    border: 2px solid rgba(143, 143, 143, 0.8);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 13px;
+    min-width: 337px;
+    min-ght: 300px;
+    margin: auto;
+    width: 337px;
+}
+.topbar {
+    font-family: 'Tangerine', cursive;
+    font-size: 15px;
+    padding-top: 5px;
+    color: #000000;
+    width: 100%;
+    ght: 30px;
+    background-color: rgba(0, 55, 62, 0.7);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.68), rgba(132, 132, 132, 0.95));
+}
+.content {
+    display: block;
+    margin: auto;
+    min-ght: 337px;
+    width: 100%;
+    background-color: rgba(242, 242, 242, 0.95);
+    max-ght: 350px;
+    overflow: auto;
+}
+.bottombar {
+    background-color: #888;
+    width: 337px;
+    ght: 20px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.68), rgba(132, 132, 132, 0.95));
+}
+.title {
+    float: left;
+    padding-top: 4px;
+    padding-left: 47px;
+}
+.close {
+    margin-right: 10px;
+    cursor: pointer;
+    float: right;
+}
+.close:hover {
+    background-color: rgba(242, 242, 242, 0.95);
+}
+#start {
+    opacity: 0.4;
+    background-color: #888;
+    width: 100%;
+    ght: 55px;
+    position: absolute;
+    bottom: 0px;
+}
+.picfolder {
+    width: 75px;
+    ght: 70px;
+    margin-left: 20px;
+    margin-top: 3px;
+    float: left;
+}
+.picfolder img {
+    display: block;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+}
+.status {
+    width: 100%;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.95), rgba(242, 242, 242, 0.4));
+}
+.loadingImg {
+    float: left;
+}
+.loadingText {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.imgBox {
+    float: left;
+    background-color: #FFFFFF;
+    border: 2px solid;
+    margin: 4px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.appIcon{
+    float:left;
+    margin-left:2px;
+    ght:20px;
+    width:20px;
+    
+}

@@ -43,6 +43,7 @@ var Quiz = {
         answer: function(url){
                 console.log(url);
               var messageText = document.getElementById("messageText");
+              var response = document.getElementById("response");
              
               var quizanswer = {
                   "id": 1,
@@ -58,7 +59,7 @@ var Quiz = {
                         Quiz.question(Quiz.quizObj.nextURL); 
                         Quiz.nrOfTriesArray.push(Quiz.counter);
                         Quiz.counter = 0;
-                       
+                        response.innerHTML = "RÄTT! "
                         
                     // slut på frågor
                     if (Quiz.quizObj.nextURL === undefined)
@@ -69,7 +70,7 @@ var Quiz = {
                     
                     // fel
                     else if (Quiz.xhr.readyState === 4 && Quiz.xhr.status === 400){
-                    Quiz.response.innerHTML = "<br>Fel, försök igen. ";  
+                    response.innerHTML = "FEL! Försök igen " 
                     }
               };
               Quiz.xhr.open('POST', url, true);

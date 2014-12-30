@@ -11,13 +11,14 @@ var Memory = {
     firstClickLocation: null,
     gridCol: 4,
     gridRow: 4,
+    counter: document.getElementById("counter"),
     
     init: function() {
         var board = document.getElementById("grid");
 
         Memory.memoryArray.push(RandomGenerator.getPictureArray(Memory.gridCol, Memory.gridRow));
         console.log(Memory.memoryArray);
-        Memory.memoryBoard(Memory.gridCol, Memory.gridRow, Memory.memoryArray);
+        Memory.memoryBoard(Memory.gridCol, Memory.gridRow);
         // Memory.click(Memory.MemoryArray); 
         
         
@@ -37,7 +38,7 @@ var Memory = {
                  
                 //Memory.count ++;
                 console.log(Memory.count);
-                var counter = document.getElementById("counter");
+                //var counter = document.getElementById("counter");
                
                 
                 Memory.click(Memory.memoryArray[0][locationId], locationId);// Kallar på memory.click och skickar med bildnummret från arrayen memoryArray samt locationId som är ett ökande nummer
@@ -63,7 +64,7 @@ var Memory = {
             console.log("första fungerar");
             this.removeEventListener
                if (Memory.count%2 === 0){
-                    counter.innerHTML = "Försök: " + (Memory.count/2);
+                    Memory.counter.innerHTML = "Försök: " + (Memory.count/2);
                 }
         }
         else if(Memory.secondClick === null){
@@ -87,7 +88,7 @@ var Memory = {
                 Memory.secondClick = null;
             }
             else 
-            {   //vänd tillbaka efter 1 sek, 
+            {   //vänd tillbaka efter en halv sek, 
                 setTimeout(function(){
                     Memory.firstClick = null;
                     Memory.secondClick = null;
@@ -98,7 +99,7 @@ var Memory = {
         }
     },
 
-    memoryBoard: function(rows, cols, memoryArray){
+    memoryBoard: function(rows, cols){
         var grid = document.getElementById("grid");
         var cards = document.getElementById("cards");
         var i = undefined;

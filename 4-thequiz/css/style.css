@@ -1,8 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Oval);
+
 header {
 
 }
-body {
+body {background-image: url("../pics/blue.jpg");
+       
     background-color: #FFFFFF;
+    
 }
 ul {
     list-style-type: none;
@@ -19,14 +23,19 @@ p {} #container {
     padding: 20px;
     overflow: auto;
     box-shadow: 3px 14px 55px 7px #C1F0F6;
+   
 }
+#container{}
 /*användarens meddelanden*/
 
 #question {
-    
-    margin-left: 236px;
+    float: left;
+    font-family: 'family=Nova+Oval', cursive;
+ 	font-size: 18px;
+    margin-left:283px;
     min-height: 200px;
     width: 452px;
+    font-size: 35px;
 }
 #messageText {} #countTries {
     float: right;
@@ -35,10 +44,16 @@ p {} #container {
     line-height: 13px;
     margin-left: 286px;
 }
+#messageText, #input{
+    
+    float:left;
+}
+
 #button {
     width: 111px;
-    padding-left: 0px;
-    margin-left: 377px;
+    float:left;
+   
+   
 }
 
 .imgNext{  
@@ -56,3 +71,8 @@ p {} #container {
     background-color: #F0FFFF;
 }
 
+#response{
+ float: right;
+padding-right: 679px;
+    
+}
